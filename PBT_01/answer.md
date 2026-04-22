@@ -38,7 +38,7 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 -> **Kết quả:** Người dùng thấy giao diện trang web Shopee hiện lên trên màn hình.
 
 **Phần 2:**
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 
 ---
 
@@ -79,7 +79,7 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 `tuan_1_html5/04_visible_part_html.md`:
 - Block vs Inline — Hai loại element cơ bản
 
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 ---
 
