@@ -1,5 +1,7 @@
 # PHIẾU BÀI TẬP 01
 
+##PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
+
 ## Câu A1 (5đ) — HTTP & Browser
 
 **Nguồn tham chiếu:**
@@ -95,3 +97,4 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 - **Thiếu sự linh hoạt (Responsive kém):** Bản chất của bảng là một khối cứng nhắc. Cấu trúc ô tự động phình ra theo nội dung khiến việc tùy biến giao diện trên nhiều kích thước màn hình bằng CSS trở thành một "cơn ác mộng".
 - **Bảo trì khó khăn & Nặng máy:** Để tạo layout bằng bảng, bạn phải lồng ghép vô số thẻ vào nhau tạo ra một mớ code HTML lộn xộn. Việc thêm/bớt các cột dễ làm vỡ toàn bộ cấu trúc, đồng thời trình duyệt cũng phải tốn nhiều tài nguyên hơn để tính toán và tải lại giao diện.
 - **Chống chỉ định cho SEO & Accessibility:** Các phần mềm hỗ trợ người khiếm thị (Screen Reader) luôn quét dữ liệu một cách máy móc theo từng ô trong hàng. Nếu bạn dùng bảng làm layout, dòng chảy nội dung sẽ bị băm vụn và đọc sai hoàn toàn so với logic thông tin ban đầu.
+
