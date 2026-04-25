@@ -98,7 +98,7 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 - **Bảo trì khó khăn & Nặng máy:** Để tạo layout bằng bảng, bạn phải lồng ghép vô số thẻ vào nhau tạo ra một mớ code HTML lộn xộn. Việc thêm/bớt các cột dễ làm vỡ toàn bộ cấu trúc, đồng thời trình duyệt cũng phải tốn nhiều tài nguyên hơn để tính toán và tải lại giao diện.
 - **Chống chỉ định cho SEO & Accessibility:** Các phần mềm hỗ trợ người khiếm thị (Screen Reader) luôn quét dữ liệu một cách máy móc theo từng ô trong hàng. Nếu bạn dùng bảng làm layout, dòng chảy nội dung sẽ bị băm vụn và đọc sai hoàn toàn so với logic thông tin ban đầu.
 
-**PHẦN B — THỰC HÀNH CODE (60 điểm)**
+## PHẦN B — THỰC HÀNH CODE (60 điểm)
 
 ## Bài B3 (15đ) — Debug HTML
 
