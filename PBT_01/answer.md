@@ -124,13 +124,13 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 
 - **Thẻ `<header>`:**  
   Nằm ở đầu trang (`<header class="header...">`), dùng để bao phần đầu website.  
-  Chứa logo, thanh tìm kiếm, menu điều hướng và giỏ hàng — đúng chức năng semantic của thẻ `<header>`.
+  Chứa logo, thanh tìm kiếm, menu điều hướng và giỏ hàng - đúng chức năng semantic của thẻ `<header>`.
 
 - **Thẻ `<section>`:**  
   Được dùng để chia trang thành các khu vực nội dung riêng biệt thay vì lạm dụng `<div>`.  
   Ví dụ:
-  - `<section class="home-viewed-products...">` — khu sản phẩm đã xem  
-  - `<section class="search-trend">` — khu xu hướng tìm kiếm  
+  - `<section class="home-viewed-products...">` - khu sản phẩm đã xem  
+  - `<section class="search-trend">` - khu xu hướng tìm kiếm  
 
 - **Thẻ `<footer>`:**  
   Nằm cuối trang (`<footer class="footer...">`), chứa thông tin hotline, địa chỉ công ty, bản quyền và liên kết phụ trợ.
