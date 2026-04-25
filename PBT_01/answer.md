@@ -113,3 +113,42 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 * **Lỗi 9:** Dòng 25 & 26 — Lỗi Semantic: Dòng tiêu đề của bảng lại đi dùng thẻ dữ liệu bình thường `<td>` — Cách sửa: Đổi `<td>` thành thẻ tiêu đề bảng `<th>`. (Nên lồng thêm `<thead>` và `<tbody>` để bảng chuẩn cấu trúc).
 * **Lỗi 10:** Dòng 36 — Lỗi Semantic: Theo chuẩn HTML5, mỗi trang web chỉ được phép có MỘT thẻ `<main>` duy nhất. Nội dung của thanh bên (sidebar) phải được đặt trong thẻ `<aside>` — Cách sửa: Thay thẻ `<main>` thứ hai thành `<aside>`.
 * **Lỗi 11:** Dòng 41 — Thiếu thẻ đóng đoạn văn — Thêm `</p>` vào cuối dòng.
+
+## Bài B4 (15đ) — Phân tích trang web thật
+### 1. Phân tích thẻ Semantic HTML5 trên trang chủ
+
+* **Trang web được chọn:** thegioididong.com
+![PBT_01/screenshots/dom_tgdd.png](screenshots/dom_tgdd.png)
+
+**3 thẻ semantic HTML5 trang đang sử dụng:**
+
+- **Thẻ `<header>`:**  
+  Nằm ở đầu trang (`<header class="header...">`), dùng để bao phần đầu website.  
+  Chứa logo, thanh tìm kiếm, menu điều hướng và giỏ hàng — đúng chức năng semantic của thẻ `<header>`.
+
+- **Thẻ `<section>`:**  
+  Được dùng để chia trang thành các khu vực nội dung riêng biệt thay vì lạm dụng `<div>`.  
+  Ví dụ:
+  - `<section class="home-viewed-products...">` — khu sản phẩm đã xem  
+  - `<section class="search-trend">` — khu xu hướng tìm kiếm  
+
+- **Thẻ `<footer>`:**  
+  Nằm cuối trang (`<footer class="footer...">`), chứa thông tin hotline, địa chỉ công ty, bản quyền và liên kết phụ trợ.
+
+---
+
+**2 thẻ trang chưa dùng đúng chuẩn semantic:**
+
+- **Lỗi 1:** Dùng `<div>` làm khung nội dung chính thay vì `<main>`.  
+  - **Lý do sai:** Theo chuẩn HTML5, khu vực nội dung chính nên dùng thẻ `<main>`.  
+  - **Thực tế:** Trang dùng `<div class="body-home">`, `<div class="main-container">` để bọc nội dung chính.  
+  - **Vấn đề:** Làm giảm semantic, ảnh hưởng SEO và screen reader.  
+  - **Sửa:** Thay bằng thẻ `<main>`.
+
+- **Lỗi 2:** Dùng `<p>` hoặc `<div>` làm nút bấm thay vì `<button>`.  
+  - **Lý do sai:** `<button>` mới là thẻ dành cho hành động bấm.  
+  - **Thực tế:** Có chỗ dùng  
+    `<p class="btn-clear-history" onclick="...">` cho nút “Xóa lịch sử”,  
+    hoặc `<div class="close-itemv3"...>` để đóng popup.  
+  - **Vấn đề:** Sai ngữ nghĩa, ảnh hưởng accessibility.  
+  - **Sửa:** Thay bằng thẻ `<button>`.
