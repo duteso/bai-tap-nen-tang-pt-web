@@ -99,15 +99,17 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
 - **Chống chỉ định cho SEO & Accessibility:** Các phần mềm hỗ trợ người khiếm thị (Screen Reader) luôn quét dữ liệu một cách máy móc theo từng ô trong hàng. Nếu bạn dùng bảng làm layout, dòng chảy nội dung sẽ bị băm vụn và đọc sai hoàn toàn so với logic thông tin ban đầu.
 
 **PHẦN B — THỰC HÀNH CODE (60 điểm)**
+
 ## Bài B3 (15đ) — Debug HTML
-Lỗi 1: Dòng 1 — Sai cú pháp khai báo DOCTYPE — Sửa `<!DOCTYPE>` thành `<!DOCTYPE html>`.
-Lỗi 2: Dòng 2 — Thiếu thẻ đóng `</title>` — Thêm `</title>` vào cuối dòng.
-Lỗi 3: Dòng 3 — Sai giá trị thuộc tính charset — Sửa `"utf8"` thành `"utf-8"`.
-Lỗi 4: Dòng 4 — Thẻ đóng tiêu đề sai cú pháp — Sửa thẻ `<h1>` ở cuối câu thành `</h1>`.
-Lỗi 5: Dòng 4 & 6 — Lỗi Semantic: Thẻ `<h1>` đại diện cho tiêu đề chính nhưng lại đặt lơ lửng bên ngoài thẻ `<header>` — Cách sửa: Di chuyển toàn bộ dòng 4 vào bên trong thẻ `<header>`.
-Lỗi 6: Dòng 8 — Thẻ đóng liên kết sai cú pháp — Sửa thẻ `<a>` ở cuối dòng thành `</a>`.
-Lỗi 7: Dòng 16 — Lỗi Syntax & Semantic: Thuộc tính `src` thiếu dấu ngoặc kép chứa đường dẫn, đồng thời thiếu thuộc tính `alt` (bắt buộc để đảm bảo Accessibility) — Sửa thành `<img src="iphone.jpg" alt="iPhone 16 Pro">`.
-Lỗi 8: Dòng 18 — Lỗi lồng thẻ (nesting) sai thứ tự — Mở `<b>` sau thẻ `<p>` thì phải đóng `</b>` trước `</p>`. Đồng thời, về mặt Semantic, nên dùng `<strong>` thay cho `<b>` để nhấn mạnh giá tiền. Sửa thành `<strong>25.990.000đ</strong></p>`.
-Lỗi 9: Dòng 25 & 26 — Lỗi Semantic: Dòng tiêu đề của bảng lại đi dùng thẻ dữ liệu bình thường `<td>` — Cách sửa: Đổi `<td>` thành thẻ tiêu đề bảng `<th>`. (Nên lồng thêm `<thead>` và `<tbody>` để bảng chuẩn cấu trúc).
-Lỗi 10: Dòng 36 — Lỗi Semantic: Theo chuẩn HTML5, mỗi trang web chỉ được phép có MỘT thẻ `<main>` duy nhất. Nội dung của thanh bên (sidebar) phải được đặt trong thẻ `<aside>` — Cách sửa: Thay thẻ `<main>` thứ hai thành `<aside>`.
-Lỗi 11: Dòng 41 — Thiếu thẻ đóng đoạn văn — Thêm `</p>` vào cuối dòng.
+
+* **Lỗi 1:** Dòng 1 — Sai cú pháp khai báo DOCTYPE — Sửa `<!DOCTYPE>` thành `<!DOCTYPE html>`.
+* **Lỗi 2:** Dòng 2 — Thiếu thẻ đóng `</title>` — Thêm `</title>` vào cuối dòng.
+* **Lỗi 3:** Dòng 3 — Sai giá trị thuộc tính charset — Sửa `"utf8"` thành `"utf-8"`.
+* **Lỗi 4:** Dòng 4 — Thẻ đóng tiêu đề sai cú pháp — Sửa thẻ `<h1>` ở cuối câu thành `</h1>`.
+* **Lỗi 5:** Dòng 4 & 6 — Lỗi Semantic: Thẻ `<h1>` đại diện cho tiêu đề chính nhưng lại đặt lơ lửng bên ngoài thẻ `<header>` — Cách sửa: Di chuyển toàn bộ dòng 4 vào bên trong thẻ `<header>`.
+* **Lỗi 6:** Dòng 8 — Thẻ đóng liên kết sai cú pháp — Sửa thẻ `<a>` ở cuối dòng thành `</a>`.
+* **Lỗi 7:** Dòng 16 — Lỗi Syntax & Semantic: Thuộc tính `src` thiếu dấu ngoặc kép chứa đường dẫn, đồng thời thiếu thuộc tính `alt` (bắt buộc để đảm bảo Accessibility) — Sửa thành `<img src="iphone.jpg" alt="iPhone 16 Pro">`.
+* **Lỗi 8:** Dòng 18 — Lỗi lồng thẻ (nesting) sai thứ tự — Mở `<b>` sau thẻ `<p>` thì phải đóng `</b>` trước `</p>`. Đồng thời, về mặt Semantic, nên dùng `<strong>` thay cho `<b>` để nhấn mạnh giá tiền. Sửa thành `<strong>25.990.000đ</strong></p>`.
+* **Lỗi 9:** Dòng 25 & 26 — Lỗi Semantic: Dòng tiêu đề của bảng lại đi dùng thẻ dữ liệu bình thường `<td>` — Cách sửa: Đổi `<td>` thành thẻ tiêu đề bảng `<th>`. (Nên lồng thêm `<thead>` và `<tbody>` để bảng chuẩn cấu trúc).
+* **Lỗi 10:** Dòng 36 — Lỗi Semantic: Theo chuẩn HTML5, mỗi trang web chỉ được phép có MỘT thẻ `<main>` duy nhất. Nội dung của thanh bên (sidebar) phải được đặt trong thẻ `<aside>` — Cách sửa: Thay thẻ `<main>` thứ hai thành `<aside>`.
+* **Lỗi 11:** Dòng 41 — Thiếu thẻ đóng đoạn văn — Thêm `</p>` vào cuối dòng.
