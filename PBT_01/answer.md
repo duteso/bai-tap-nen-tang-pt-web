@@ -192,3 +192,10 @@ nhưng được đặt trực tiếp trong `<tbody>` và dùng thẻ `<td>` thô
 ## PHẦN C — SUY LUẬN (20 điểm)
 ## Câu C1 (10đ) — Thiết kế cấu trúc
 [text](C1.html)
+
+## Câu C2 (10đ) — So sánh & Tranh luận
+- Dùng div cho tất cả mọi thứ thì cũng ok, nhanh và dễ dàng thiết kế. Nhưng việc bỏ qua semantic sẽ khiến trang web mất đi những lợi thế kỹ thuật không thể bù đắp.
+- Đầu tiên, về SEO: Google chỉ có thể đọc cấu trúc HTML chứ không nhìn được giao diện mà bạn thiết kế. Khi bạn dùng `<div class="main-page">` với Google cũng chỉ là một khối vô nghĩa, nhưng nếu bạn dùng thẻ `<h1>` nó sẽ hiểu đó là nội dung chính của trang. Việc dùng đúng các thẻ phù hợp semantic giúp công cụ tìm kiếm lập chỉ mục nội dung chính xác hơn, từ đó cải thiện khả năng đề xuất của trang.
+- Thứ hai, về mặt khả năng tiếp cận/trợ năng. Những người dùng khiếm thị dựa vào Trình đọc màn hình để sử dụng thiết bị/lướt web. Các thẻ semantic được hệ điều hành và trình duyệt hỗ trợ để giao tiếp với các phần mềm này hiệu quả hơn.
+- Ví dụ: Nếu bạn làm một thanh điều hướng với cấu trúc semantic `<nav><ul><li><a>Trang chủ</a></li></ul></nav>`, các chương trình hỗ trợ sẽ đọc: "Navigation region, list of X items", giúp người dùng khiếm thị hiểu được cấu trúc menu. Nếu chỉ dùng thẻ `<div>` họ chỉ nghe thấy những đoạn văn bản rời rạc, khiến cho việc sử dụng trở nên khó khăn.
+- Tuy nhiên, `div` vẫn có thể được sử dụng nếu như bạn cần có một khối để bọc những thẻ semantic khác, nhằm làm cho việc thiết kế giao diện dễ dàng hơn khi kết hợp với những thẻ style của CSS.
