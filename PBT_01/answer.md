@@ -152,3 +152,39 @@ Khi gõ `https://shopee.vn` vào trình duyệt:
     hoặc `<div class="close-itemv3"...>` để đóng popup.  
   - **Vấn đề:** Sai ngữ nghĩa, ảnh hưởng accessibility.  
   - **Sửa:** Thay bằng thẻ `<button>`.
+
+  ### 2. Thẻ `<table>`
+
+![alt text](screenshots/table_tgdd.png)
+
+Table này hiển thị thông tin thống kê và so sánh thời lượng pin khi xem video của nhiều thế hệ iPhone, từ iPhone SE 2, iPhone 11 đến các dòng mới như iPhone 16 và iPhone 16e.
+
+Có dùng `<tbody>`
+
+Toàn bộ các hàng dữ liệu `<tr>` trong bảng đều được đặt bên trong thẻ `<tbody>`, dùng để chứa phần nội dung chính của bảng.
+
+Không dùng `<thead>`
+
+Đoạn code không sử dụng thẻ `<thead>`.  
+Hàng đầu tiên đóng vai trò tiêu đề bảng gồm:
+
+`Thế hệ điện thoại`  
+`Thời gian sử dụng`
+
+nhưng được đặt trực tiếp trong `<tbody>` và dùng thẻ `<td>` thông thường, thay vì dùng cấu trúc semantic chuẩn gồm `<thead>` và `<th>` để định nghĩa tiêu đề cột.
+
+
+### 3. Thẻ form `<form action="/tim-kiem"...>`
+
+![alt text](screenshots/form_tgdd.png)
+
+- Thẻ form có thuộc tính `action="/tim-kiem"` dùng để xác định nơi gửi dữ liệu tìm kiếm. Nếu không khai báo `method` thì theo chuẩn HTML5 trình duyệt mặc định sử dụng phương thức GET.
+
+- Trong form này sử dụng hai kiểu `input type`
+- `type="text"` nằm ở thẻ `<input id="skw" type="text"...>`
+
+- Giải thích: Đây là trường nhập liệu văn bản một dòng dùng để người dùng nhập từ khóa tìm kiếm. Ô nhập có thuộc tính `placeholder="MacBook Neo"` giúp hiển thị nội dung gợi ý khi chưa nhập dữ liệu.
+
+- `type="submit"` nằm ở thẻ `<button type="submit"...>`
+
+- Giải thích: Đây là nút gửi biểu mẫu, chứa biểu tượng kính lúp tìm kiếm. Khi người dùng nhấn nút, toàn bộ dữ liệu trong form sẽ được gửi đến địa chỉ khai báo trong thuộc tính `action`.
