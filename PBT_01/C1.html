@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header> <!-- header vì đây là phần đầu trang chứa logo, search, giỏ hàng -->
+        <a href="#">
+            <img src="Shopee_logo.svg.png" alt="Shopee" style="height: 60px; width: auto">
+        </a> <!-- a vì logo cần link về trang chủ khi click -->
+        <form action="/search"  method="GET"> <!--form vì tìm kiếm là chức năng submit -->
+            <input type="search"> <!--input type ="search" để có thanh tìm kiếm -->
+            <button>Tìm kiếm</button> <!--button để submit form-->
+        </form>
+        <a href="#">Giỏ hàng</a> <!--a để đại diện cho chức năng xem giỏ hàng của trang web-->
+        <nav> <!-- nav vì chứa menu điều hướng phụ (tiện ích) -->
+            <ul> <!-- ul vì đây là danh sách các link không có thứ tự -->
+                <li><a href="#">Kênh người bán</a></li> <!-- li cho mỗi mục menu -->
+                <li><a href="#">Tải ứng dụng</a></li>
+                <li><a href="#">Kết nối</a></li>
+            </ul>
+        </nav>
+    </header>
+     <nav aria-label="breadcrumb"> <!-- nav vì breadcrumb cũng là điều hướng -->
+            <ol> <!--ol vì breadcumb có thứ tự-->
+                <li> <!--li cho mỗi mục-->
+                    <a href="#">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#">Điện thoại</a>
+                </li>
+                <li>
+                    iPhone 16
+                </li>
+            </ol>
+        </nav>
+    <main style="display: flex;"> <!--main vì đây là phần chứa nội dung chính của trang-->
+        <section id="product"> <!--section sản phẩm-->
+            <section id="product_img"> <!--section phần chứa những hình ảnh của sản phẩm-->
+                <figure> <!--figure cho sản phẩm-->
+                    <img src="https://placehold.co/200" alt="iphone16_front"> <!--img để chèn hình ảnh, src="placehold.co" để làm mẫu-->
+                    <img src="https://placehold.co/200" alt="iphone16_side"> <!--img để chèn hình ảnh, src="placehold.co" để làm mẫu-->
+                    <img src="https://placehold.co/200" alt="iphone16_back"> <!--img để chèn hình ảnh, src="placehold.co" để làm mẫu-->
+                    <img src="https://placehold.co/200" alt="iphone16_upward"> <!--img để chèn hình ảnh, src="placehold.co" để làm mẫu-->
+                    <img src="https://placehold.co/200" alt="iphone16_downward"> <!--img để chèn hình ảnh, src="placehold.co" để làm mẫu-->
+                    <figcaption>Hình ảnh chỉ mang tính chất minh họa</figcaption> <!--figcaption để chèn tiêu đề cho figure-->
+                </figure>
+            </section>
+            <section id="product_info">
+                <h3>iPhone 16</h3> <!--h3 để tên sản phẩm nổi bật-->
+                <p><strong>Giá: 36.363.363 đồng</strong> <!--p làm phần mô tả thông tin chi tiết cho sản phẩm, strong để giá tiền được in đậm nhằm nổi bật-->
+                    <br> <!--xuống dòng-->
+                    Đánh giá: 3.6/5 ⭐
+                    <br>
+                    <strong>Mô tả:</strong>
+                    iPhone 16 (phiên bản tiêu chuẩn) nổi bật với thiết kế camera đặt dọc mới,
+                    <br>nút Camera Control (Điều khiển camera) và nút Action,
+                    <br>cùng chip A18 mạnh mẽ hỗ trợ Apple Intelligence.
+                </p>
+                    <table border="1" cellpadding="10px"> <!--table để làm bảng thông số kỹ thuật-->
+                        <tbody> <!--Phần thân bảng-->
+                            <tr> <!--Tạo dòng mới cho từng thông số-->
+                                <th> <!--Tiêu đề của hàng-->
+                                    Thông số
+                                </th>
+                                <td> <!--Dữ liệu của hàng-->
+                                    iPhone 16
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Màn hình
+                                </th>
+                                <td>
+                                    6.1" OLED, 60Hz
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Chip
+                                </th>
+                                <td>
+                                    A18
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Camera
+                                </th>
+                                <td>
+                                    48MP + 12MP
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Pin
+                                </th>
+                                <td>
+                                    ~3561 mAh
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Bộ nhớ
+                                </th>
+                                <td>
+                                    128/256/512GB
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+            <section id="comment">
+                <h3>Đánh giá/Bình luận:</h3>
+                <input type="text" placeholder="Tên hiển thị..."> <!--input type="text" để nhập nội dung là văn bản-->
+                <button>Gửi</button> <!--Button tượng trưng cho chức năng gửi đánh giá-->
+                <br>
+                <input type="text" placeholder="Viết đánh giá của bạn tại đây!" style="height: 150px; width: 202px;">
+            </section>
+        </section>
+          <aside> <!--aside để làm sidebar-->
+            <figure>
+                <img src="https://placehold.co/100" alt="123">
+                <figcaption>Sản phẩm nên tham khảo</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/100" alt="123">
+                <figcaption>Sản phẩm nên tham khảo</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/100" alt="123">
+                <figcaption>Sản phẩm nên tham khảo</figcaption>
+            </figure>
+        </aside>
+    </main>
+  
+    <footer>
+        Dương Thế Sơn 26042026
+    </footer>
+</body>
+</html>

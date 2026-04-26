@@ -188,3 +188,7 @@ nhưng được đặt trực tiếp trong `<tbody>` và dùng thẻ `<td>` thô
 - `type="submit"` nằm ở thẻ `<button type="submit"...>`
 
 - Giải thích: Đây là nút gửi biểu mẫu, chứa biểu tượng kính lúp tìm kiếm. Khi người dùng nhấn nút, toàn bộ dữ liệu trong form sẽ được gửi đến địa chỉ khai báo trong thuộc tính `action`.
+
+## PHẦN C — SUY LUẬN (20 điểm)
+## Câu C1 (10đ) — Thiết kế cấu trúc
+[text](C1.html)
