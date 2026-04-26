@@ -199,3 +199,6 @@ nhưng được đặt trực tiếp trong `<tbody>` và dùng thẻ `<td>` thô
 - Thứ hai, về mặt khả năng tiếp cận/trợ năng. Những người dùng khiếm thị dựa vào Trình đọc màn hình để sử dụng thiết bị/lướt web. Các thẻ semantic được hệ điều hành và trình duyệt hỗ trợ để giao tiếp với các phần mềm này hiệu quả hơn.
 - Ví dụ: Nếu bạn làm một thanh điều hướng với cấu trúc semantic `<nav><ul><li><a>Trang chủ</a></li></ul></nav>`, các chương trình hỗ trợ sẽ đọc: "Navigation region, list of X items", giúp người dùng khiếm thị hiểu được cấu trúc menu. Nếu chỉ dùng thẻ `<div>` họ chỉ nghe thấy những đoạn văn bản rời rạc, khiến cho việc sử dụng trở nên khó khăn.
 - Tuy nhiên, `div` vẫn có thể được sử dụng nếu như bạn cần có một khối để bọc những thẻ semantic khác, nhằm làm cho việc thiết kế giao diện dễ dàng hơn khi kết hợp với những thẻ style của CSS.
+
+## PHẦN D — VIDEO THỰC HÀNH OBS (25 điểm)
+![alt text](https://drive.google.com/file/d/1u0LRJ90wSBkSlFuKSCFXEMBa0c6r5rQS/view?usp=sharing)
