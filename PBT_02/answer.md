@@ -333,3 +333,27 @@ Phù hợp khi:
 ### Kết luận
 - `<img>` -> dùng khi chỉ cần hiển thị ảnh.  
 - `<figure>` + `<figcaption>` -> dùng khi ảnh cần ngữ cảnh hoặc chú thích đi kèm.
+
+## PHẦN B — THỰC HÀNH CODE (55 điểm)
+### Bài B1 (20đ) — Form Đăng ký Tài khoản
+### Giải thích tại sao HTML không thể validate Confirm Password
+
+HTML chỉ kiểm tra dữ liệu của từng ô input riêng bằng các thuộc tính như `required`, `minlength`, `pattern`... nên chỉ biết ô nhập đó có đúng định dạng hay không.
+
+Ví dụ ô xác nhận mật khẩu có thể kiểm tra:
+- đủ 8 ký tự  
+- có ít nhất 1 chữ hoa  
+- có ít nhất 1 số  
+
+Nhưng HTML không tự so sánh được mật khẩu nhập ở ô Password có giống ô Confirm Password hay không.
+
+Ví dụ:
+
+```text
+Password: Abc12345
+Confirm Password: Abc12346
+```
+
+Hai mật khẩu khác nhau nhưng HTML vẫn có thể coi cả hai hợp lệ vì đều đúng pattern.
+
+Việc kiểm tra hai ô có trùng nhau hay không là kiểm tra giữa nhiều trường dữ liệu (cross-field validation), HTML thuần không làm được, thường phải dùng JavaScript hoặc kiểm tra phía server để xử lý.
