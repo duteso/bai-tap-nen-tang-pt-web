@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Multimedia</title>
+</head>
+<body>
+    <header>
+       <h1>Trang Multimedia</h1> 
+    </header>
+    <main>
+        <article id="product">
+            <figure>
+                <img src="https://placehold.co/100" alt="img_1" loading="lazy" style="max-width:100%; height:auto;">
+                <figcaption>Ảnh 1</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/100" alt="img_2" loading="lazy" style="max-width:100%; height:auto;">
+                <figcaption>Ảnh 2</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/100" alt="img_3" loading="lazy" style="max-width:100%; height:auto;">
+                <figcaption>Ảnh 3</figcaption>
+            </figure>
+            <h3>iframe nhúng video youtube</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4Uboc-5ySV8?si=kAendGDUH0D9MbZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><br>
+            <h3>Video</h3>
+            <video controls poster="vovinam.jpg" width="500">
+                <source src="a.mp4" type="video/mp4">
+                <source src="a.webm" type="video/webm">
+                Trình duyệt của bạn không hỗ trợ video
+            </video>
+            <br><br>
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="a.wav">
+                Trình duyệt không hỗ trợ âm thanh
+            </audio>
+            <br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+                <defs><radialGradient r=".48" cx=".47" cy=".49" id="rg">
+                <stop stop-color="#FFF" offset=".7"/>
+                <stop stop-color="#DDD" offset=".9"/>
+                <stop stop-color="#777" offset="1"/>
+                </radialGradient></defs>
+                <rect fill="#DCB35C" width="500" height="500"/>
+                <circle fill="url(#rg)" r="245" cx="250" cy="250"/>
+                <text x="111" y="340" font-size="256px" font-family="Arial">
+                <tspan>36</tspan></text>
+            </svg>
+        </article>
+    </main>
+    <footer></footer>
+</body>
+</html>
