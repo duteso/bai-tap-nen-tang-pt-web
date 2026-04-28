@@ -357,3 +357,218 @@ Confirm Password: Abc12346
 Hai mật khẩu khác nhau nhưng HTML vẫn có thể coi cả hai hợp lệ vì đều đúng pattern.
 
 Việc kiểm tra hai ô có trùng nhau hay không là kiểm tra giữa nhiều trường dữ liệu (cross-field validation), HTML thuần không làm được, thường phải dùng JavaScript hoặc kiểm tra phía server để xử lý.
+
+## PHẦN C — PHÂN TÍCH & SUY LUẬN
+
+## Câu C1 (10đ) — Debug Form
+
+**Lỗi 1:** Input "Tên" không có `<label for="">`, vi phạm accessibility.  
+
+**Sửa:**
+```html
+<label for="name">Tên:</label>
+<input type="text" id="name" name="name" required>
+```
+
+---
+
+**Lỗi 2:** Input Email không có label, chỉ dùng placeholder là chưa đủ cho accessibility.
+
+**Sửa:**
+```html
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+```
+
+---
+
+**Lỗi 3:** Password chưa có validation tối thiểu (`required`, `minlength`).
+
+**Sửa:**
+```html
+<label for="password">Mật khẩu:</label>
+<input 
+type="password"
+id="password"
+name="password"
+minlength="8"
+required>
+```
+
+---
+
+**Lỗi 4:** Confirm Password không có label và chưa có required.
+
+**Sửa:**
+```html
+<label for="confirm-password">
+Nhập lại mật khẩu:
+</label>
+
+<input
+type="password"
+id="confirm-password"
+name="confirm-password"
+required>
+```
+
+---
+
+**Lỗi 5:** Phone dùng sai `type="text"` thay vì `type="tel"`.
+
+**Sửa:**
+```html
+<label for="phone">Số điện thoại:</label>
+
+<input
+type="tel"
+id="phone"
+name="phone"
+pattern="0[0-9]{9}"
+required>
+```
+
+---
+
+**Lỗi 6:** Dùng `value="0901234567"` làm dữ liệu mặc định không phù hợp, nên dùng placeholder.
+
+**Sửa:**
+```html
+<input
+type="tel"
+placeholder="0901234567">
+```
+
+---
+
+**Lỗi 7:** Select không có label, vi phạm accessibility.
+
+**Sửa:**
+```html
+<label for="city">Tỉnh/Thành phố:</label>
+
+<select id="city" name="city">
+<option>Hà Nội</option>
+<option>TP.HCM</option>
+</select>
+```
+
+---
+
+**Lỗi 8:** Điều khoản chưa có checkbox thật, chỉ có label.
+
+**Sửa:**
+```html
+<input
+type="checkbox"
+id="terms"
+required>
+
+<label for="terms">
+Tôi đồng ý điều khoản
+</label>
+```
+
+---
+
+## Câu C2 (10đ) — Thiết kế chiến lược Validation
+
+### Regex cho CMND/CCCD (đúng 12 chữ số)
+
+```html
+pattern="[0-9]{12}"
+```
+
+Ví dụ hợp lệ:
+
+```text
+123456789012
+```
+
+---
+
+### Regex cho số tài khoản (10–15 chữ số)
+
+```html
+pattern="[0-9]{10,15}"
+```
+
+Ví dụ hợp lệ:
+
+```text
+1234567890
+123456789012345
+```
+
+---
+
+### PIN (6 chữ số, không hiển thị)
+
+```html
+<input
+type="password"
+pattern="[0-9]{6}"
+maxlength="6"
+required>
+```
+
+---
+
+### HTML5 validation có đủ an toàn cho ứng dụng ngân hàng chưa?
+
+Không đủ.
+
+HTML5 validation chỉ hỗ trợ kiểm tra dữ liệu phía frontend, giúp người dùng nhập đúng định dạng, nhưng không phải cơ chế bảo mật.
+
+Người dùng có thể:
+- tắt validation của trình duyệt  
+- chỉnh sửa HTML bằng DevTools  
+- gửi request giả bằng Postman hoặc API  
+- bypass toàn bộ frontend validation  
+
+Vì vậy vẫn bắt buộc validate ở backend.
+
+---
+
+### 3 loại validation HTML5 không thể tự làm
+
+**1. So sánh giữa nhiều trường dữ liệu**  
+Ví dụ:
+- Xác nhận mật khẩu trùng mật khẩu  
+- Nhập lại số tài khoản có khớp không
+
+---
+
+**2. Kiểm tra nghiệp vụ động**  
+Ví dụ:
+- CCCD đã tồn tại chưa  
+- Email đã đăng ký chưa  
+- Số dư có đủ để giao dịch không
+
+---
+
+**3. Validation logic phức tạp**  
+Ví dụ:
+- Người dùng phải từ 18 tuổi trở lên  
+- PIN không được là 000000  
+- Mật khẩu không chứa tên đăng nhập
+
+---
+
+### 2 rủi ro nếu chỉ validate Frontend
+
+**1. Dữ liệu xấu vẫn có thể gửi lên hệ thống**  
+Có thể dẫn tới:
+- sai định dạng  
+- dữ liệu giả  
+- nhập payload độc hại
+
+---
+
+**2. Rủi ro bảo mật**  
+Có thể bị:
+- SQL Injection  
+- XSS  
+- giả mạo request hoặc gian lận giao dịch
+
+Vì vậy Frontend validation chỉ hỗ trợ trải nghiệm người dùng, backend validation mới là lớp kiểm tra bắt buộc.
