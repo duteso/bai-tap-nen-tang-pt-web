@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đặt hàng hoàn chỉnh</title>
+</head>
+<body>
+    <header>
+        <h1>Form Đặt hàng hoàn chỉnh</h1>
+    </header>
+    <main>
+        <label for="product-choice"><strong>Tìm kiếm sản phẩm</strong></label>
+        <input list="products" id="product-choice">
+        <button type="button">Tìm kiếm</button>
+        <datalist id="products">
+            <option value="Tài/Xỉu góc"></option>
+            <option value="Tài/Xỉu bàn"></option>
+            <option value="Tài/Xỉu thẻ"></option>
+            <option value="Tài/Xỉu biên"></option>
+        </datalist>
+        <br><br>
+        <form action="" method="POST">
+            <fieldset id="cart">
+                <legend><strong>Giỏ hàng</strong></legend>
+                <table border="1" cellpadding="10px">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Xỉu góc 10.5</td>
+                            <td>25.000 VNĐ</td>
+                            <td>2</td>
+                            <td>50.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>BTTS</td>
+                            <td>50.000 VNĐ</td>
+                            <td>3</td>
+                            <td>150.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>BAYMNL</td>
+                            <td>50.000 VNĐ</td>
+                            <td>2</td>
+                            <td>100.000 VNĐ</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align: right;">
+                                Tổng: 300.000 VNĐ
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </fieldset>
+            <fieldset id="checkout">
+                <legend><strong>Thanh toán</strong></legend>
+                    <input type="radio" name="type" id="cod" required>
+                    <label for="cod">COD</label>
+                    <input type="radio" name="type" id="banking" required>
+                    <label for="banking">Banking</label>
+                    <input type="radio" name="type" id="e-wallet" required>
+                    <label for="e-wallet">Ví điện tử</label>
+                    <br><br>
+                    <label for="discount">Mã giảm giá</label>
+                    <input type="text" name="magiamgia" id="discount" pattern="SALE[0-9]{4}" required placeholder="VD: SALE2026">
+                    <br><br>
+                    <label for="note">Ghi chú (Nếu có)</label>
+                    <textarea name="ghichu" id="note" rows="3"></textarea>
+                    <br><br>
+                    <output><strong>Tổng tiền: </strong>300.000 VNĐ</output>
+                    <br><br>
+                    <label for="tichluy">Điểm tích lũy</label>
+                    <progress id="tichluy" value="36" max="100">36 điểm</progress>
+            </fieldset>
+            <fieldset id="delivery">
+                <legend><strong>Thông tin giao hàng</strong></legend>
+                <label for="ngay">Ngày giao hàng</label>
+                <input type="date" min="2026-04-29" id="ngay">
+                <br><br>
+                <label for="time">Khung giờ</label>
+                <select name="delivery-time" id="time">
+                    <option value="sang">8-12h</option>
+                    <option value="chieu">14-18h</option>
+                    <option value="toi">18-21h</option>
+                </select>
+                <br><br>
+                <label for="time1">Thời gian giao hàng</label>
+                <input id="time1" type="range" min="1" max="7" step="1">
+            </fieldset>
+            <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
