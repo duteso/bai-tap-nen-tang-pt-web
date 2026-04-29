@@ -572,3 +572,6 @@ Có thể bị:
 - giả mạo request hoặc gian lận giao dịch
 
 Vì vậy Frontend validation chỉ hỗ trợ trải nghiệm người dùng, backend validation mới là lớp kiểm tra bắt buộc.
+
+## PHẦN D — VIDEO THỰC HÀNH OBS (25 điểm)
+- Link video: https://drive.google.com/file/d/1468rNLF1MFmGa5NCPIa7ILRhDHJp3SlB/view?usp=sharing
