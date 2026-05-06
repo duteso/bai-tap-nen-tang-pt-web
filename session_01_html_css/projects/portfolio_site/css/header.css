@@ -1,0 +1,22 @@
+.Logo {
+    color: Black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;    
+}
+nav :hover {
+    color: black;
+    background-color: white;
+}
+nav a{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+}
+header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
