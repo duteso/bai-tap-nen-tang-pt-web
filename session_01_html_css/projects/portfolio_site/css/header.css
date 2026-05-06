@@ -1,6 +1,8 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
 .Logo {
     color: Black;
-    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;    
 }
 nav :hover {
@@ -11,12 +13,16 @@ nav a{
     margin-left: 20px;
     font-size: 30px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
+    color: black;
 }
 header{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    background-color: antiquewhite;
+    position: sticky;
+    padding: 10px 20px;
+    top: 0;
+    z-index: 36363636;
+    background-color: white;
 }
