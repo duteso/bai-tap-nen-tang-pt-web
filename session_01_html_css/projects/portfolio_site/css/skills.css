@@ -1,0 +1,15 @@
+.skills h2{
+    text-align: center;
+}
+.details-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+progress {
+    width: 100%;
+    height: 45px;
+    appearance: none;
+}

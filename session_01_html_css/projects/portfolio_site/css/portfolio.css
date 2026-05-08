@@ -1,0 +1,32 @@
+.portfolio h2{
+    padding-top: 100px;
+    text-align: center;
+}
+.options{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-bottom: 10px;
+}
+.options a {
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 25px;
+    color: rgb(107, 107, 216);
+    border-radius: 100px;
+    border: 2px rgb(107, 107, 216); 
+}
+.options a:hover {
+    background-color: rgb(107, 107, 216);
+    color: white;
+}
+.img-container{
+    display: grid;
+    grid-template-columns: repeat(3, 500px);
+    gap: 10px;
+    justify-content: center;
+}
+.img-container img{
+    border-radius: 10px;
+}

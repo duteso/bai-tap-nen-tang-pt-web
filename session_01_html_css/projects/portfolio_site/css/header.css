@@ -1,0 +1,28 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.Logo {
+    color: Black;
+    font-weight: bold;    
+}
+nav :hover {
+    color: black;
+    background-color: white;
+}
+nav a{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    padding: 10px 20px;
+    top: 0;
+    z-index: 36363636;
+    background-color: white;
+}
