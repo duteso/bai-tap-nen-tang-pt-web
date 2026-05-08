@@ -1,0 +1,28 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 80px;
+    flex-wrap: wrap;       
+}
+#avt{
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.about h2{
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.about p{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.about-content{
+    width: 40%;
+    min-width: 300px;
+}

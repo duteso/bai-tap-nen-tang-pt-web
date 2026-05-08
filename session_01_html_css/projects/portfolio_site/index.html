@@ -5,6 +5,11 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css ">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <header>
@@ -24,6 +29,96 @@
             <p> Fullstack - Developer | UI - Designer | Problem Solver</p>
             <a href="#works">View my works</a>
         </div>
+        <div class="about">
+            <img src="a.jpg" alt="avt" id="avt">
+            <div class="about-content">
+                <h2>About me</h2>
+                <p>Hello các bạn mình là Dương Thế Sơn. Mình đang theo học ngành Hệ thống thông tin tại Trường đại học Thủy Lợi!</p>
+            </div>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <div class="details-skills">
+                <div class="html">
+                <label for="html">HTML</label>
+                <progress id="html" value="30" max="100"></progress>
+            </div>
+            <div class="CSS">
+                <label for="css">CSS</label>
+                <progress id="css" value="30" max="100"></progress>
+            </div>
+            <div class="JS">
+                <label for="js">Javascript</label>
+                <progress id="js" value="30" max="100"></progress>
+            </div>
+            <div class="REACT">
+                <label for="react">React</label>
+                <progress id="react" value="30" max="100"></progress>
+            </div>
+            </div>
+        </div>
+        <div class="portfolio">
+            <h2>My Portfolio</h2>
+            <div class="options">
+                <a href="#">All</a>
+                <a href="#">Web</a>
+                <a href="#">Mobile</a>
+                <a href="#">Design</a>
+            </div>
+            <div class="img-container">
+                <img src="https://placehold.co/400x250" alt="img">
+                <img src="https://placehold.co/400x250" alt="img">
+                <img src="https://placehold.co/400x250" alt="img">
+                <img src="https://placehold.co/400x250" alt="img">
+                <img src="https://placehold.co/400x250" alt="img">
+                <img src="https://placehold.co/400x250" alt="img">
+            </div>
+        </div>
+        <div class="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out. I'm always open to discussing new projects.</p>
+                <div class="info-details">
+                    <p>duongthson@email.com</p>
+                    <p>Hanoi, Vietnam</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com">
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="btn-send">Send Message &rarr;</button>
+            </form>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <h2>Dương Thế Sơn</h2>
+            </div>
+            <p>Building digital experiences</p>
+            <div class="social-icons">
+                <a href="#">Github</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Email</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dương Thế Sơn. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
