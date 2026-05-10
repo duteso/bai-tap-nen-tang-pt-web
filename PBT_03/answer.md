@@ -503,3 +503,44 @@ p#demo.text.highlight
 vẫn có độ ưu tiên cao nhất nên dù đổi vị trí trong file css thì phần tử vẫn hiển thị màu gold.
 
 tuy nhiên, nếu hai rule có cùng độ ưu tiên thì rule được viết sau sẽ được ưu tiên hơn.
+
+## PHẦN C — DEBUG & SUY LUẬN (20 điểm)
+### Câu C1 (10đ) — Debug CSS Layout
+#### 1. Chiều rộng thực tế:
+```
+- Mặc định (box-sizing: content-box), kích thước = width + padđing + border
+  + Sidebar:  300px (width) + 20px*2 (padding, trái và phải) + 1px (border, trái + phải) = 342px
+  + Content: 660px + 30px*2 + 1*2px = 724px 
+```
+#### 2. Lý do Layout bị vỡ:
+```
+- Chiều rộng thực tế = 342px + 724px = 1066px
+=> Vượt quá chiều rộng của .container (960px). Khi dùng float: left, nếu không đủ không gian trên 1 hàng
+thì phần tử thứ 2 sẽ bị đẩy xuống dưới. 
+```
+
+#### 3. Cách sửa:
+1. Cách 1: Sử dụng `border-box`
+```
+Thêm box-sizing: border-box để padding và border được tính bên trong width đã khai báo:
+.sidebar, .content {
+    box-sizing: border-box;
+}
+=> + Sidebar = 300px (bao gồm padding và border)
+   + Content = 660px
+   => Tổng = 300px + 660px = 960px 
+```
+2. Cách 2: Sửa lại width của sidebar và content
+```
+.sidebar {
+    width: 258px;  /* 300 - 40 - 2 */
+}
+.content {
+    width: 598px;  /* 660 - 60 - 2 */
+}
+=> + Sidebar = 258 + 40 + 2 = 300px
+   + Content = 598 + 60 + 2 = 660px
+   => Tổng = 300 + 660 = 960px
+```
+
+#### 4. Files
