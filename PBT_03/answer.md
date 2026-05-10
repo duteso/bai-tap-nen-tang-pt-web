@@ -252,7 +252,7 @@ nếu cả hai đều âm:
 
 ---
 
-### cCâu A4 (5đ) — Specificity (Độ ưu tiên)
+### Câu A4 (5đ) — Specificity (Độ ưu tiên)
 
 cho đoạn css:
 
@@ -355,3 +355,6 @@ p.price {
 dù selector yếu hơn nhưng nếu có `!important` thì vẫn được ưu tiên trước.
 
 chỉ khi nhiều css cùng có `!important` thì mới xét tiếp đến độ ưu tiên.
+
+## PHẦN B — THỰC HÀNH CODE (55 điểm)
+### Bài B1 (20đ) — Style trang Profile
