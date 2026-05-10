@@ -544,3 +544,44 @@ Thêm box-sizing: border-box để padding và border được tính bên trong 
 ```
 
 #### 4. Files
+
+### Câu C2 (10đ) — Cascade Puzzle
+#### 1. "Sản phẩm A" (h2) có font-size = ? và color = ?
+```
+- font-size:
+.body: 16px
+.container: 14px
+.card .title: 20px (specificity: (0, 0, 2, 0)) 
+=> font-size = 20px
+
+- color:
+.body: #333
+.card: blue (không áp dụng cho title)
+#featured .title: red (specificity: (0, 1, 1, 0))
+.highlight: green !important (!important)
+=> color = green (do !important)
+```
+
+#### 2. "Mô tả sản phẩm" (p trong card featured) có color = ?
+```
+-color:
+.body: #333
+.card: blue
+.card p: inherit (inherit từ parent .card = blue)
+=> color = blue (inherit lấy giá trị từ phần tử cha. Ở đây cha là .card (có color = blue) nên .card p sẽ có color bue)
+```
+
+#### 3. "Sản phẩm B" (h2) có font-size = ? và color = ?
+```
+-font-size
+.body: 16px
+.container: 14px
+.card .title: 20px (specificity: (0, 0, 2, 0))
+=>font-size = 20px
+
+-color:
+.body: #333
+.card: blue
+.card .title: không có khai báo color => inherit từ .card = blue
+=>color = blue
+```
