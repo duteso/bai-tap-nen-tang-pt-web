@@ -584,4 +584,22 @@ Thêm box-sizing: border-box để padding và border được tính bên trong 
 .card: blue
 .card .title: không có khai báo color => inherit từ .card = blue
 =>color = blue
+vì rule .card .title chỉ định nghĩa font-size mà không có color
+,nên thuộc tính color sẽ kế thừa từ phần tử cha .card là màu blue.
+```
+
+#### 4. "Mô tả sản phẩm B" (p.highlight) có color = ?
+```
+- color:
+body: #333 (inherited)
+.card: blue
+.card p: inherit (kế thừa từ .card = blue)
+.highlight: green !important (!important override tất cả)
+=> color = green
+
+giải thích:
+Dù rule .card p có thuộc tính color: inherit (lấy màu blue từ .card), 
+nhưng rule .highlight có khai báo color: green !important. 
+Trong CSS Cascade, !important có độ ưu tiên cao nhất, 
+ghi đè lên cả Specificity và tính kế thừa, nên kết quả cuối cùng là green.
 ```
