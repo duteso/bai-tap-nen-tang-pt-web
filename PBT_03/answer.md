@@ -603,3 +603,5 @@ nhưng rule .highlight có khai báo color: green !important.
 Trong CSS Cascade, !important có độ ưu tiên cao nhất, 
 ghi đè lên cả Specificity và tính kế thừa, nên kết quả cuối cùng là green.
 ```
+- Ảnh:
+![alt text](<screenshots/image copy 6.png>)
