@@ -428,3 +428,78 @@ khi dùng `border-box`, phần `padding` sẽ được tính luôn bên trong `w
 vì tổng chiều rộng đúng bằng 1000px nên ba cột nằm vừa trong container.
 
 ở hình thực tế, cả ba cột đều hiển thị trên cùng một hàng và không bị xuống dòng, layout hiển thị đúng như mong muốn.
+
+### Bài B3 (15đ) — Specificity Battle
+![alt text](<screenshots/image copy 5.png>)
+### 1. liệt kê 10 rules và specificity score
+
+1. `p` → **(0, 0, 0, 1)**  
+vì có 1 thẻ html
+
+2. `.text` → **(0, 0, 1, 0)**  
+vì có 1 class
+
+3. `.highlight` → **(0, 0, 1, 0)**  
+vì có 1 class
+
+4. `p.text` → **(0, 0, 1, 1)**  
+vì có 1 class và 1 thẻ
+
+5. `p.highlight` → **(0, 0, 1, 1)**  
+vì có 1 class và 1 thẻ
+
+6. `.text.highlight` → **(0, 0, 2, 0)**  
+vì có 2 class
+
+7. `p.text.highlight` → **(0, 0, 2, 1)**  
+vì có 2 class và 1 thẻ
+
+8. `#demo` → **(0, 1, 0, 0)**  
+vì có 1 id
+
+9. `p#demo` → **(0, 1, 0, 1)**  
+vì có 1 id và 1 thẻ
+
+10. `p#demo.text.highlight` → **(0, 1, 2, 1)**  
+vì có 1 id, 2 class và 1 thẻ
+
+---
+
+### 2. element cuối cùng hiển thị màu gì? tại sao?
+
+element cuối cùng hiển thị **màu gold**.
+
+lý do là rule:
+
+```css
+p#demo.text.highlight {
+    color: gold;
+}
+```
+
+có độ ưu tiên cao nhất:
+
+**(0, 1, 2, 1)**
+
+rule này có:
+- 1 id
+- 2 class
+- 1 thẻ html
+
+nên nó có độ ưu tiên cao hơn tất cả các rule còn lại và được áp dụng cuối cùng.
+
+---
+
+### 3. thay đổi thứ tự rules trong file css, kết quả có đổi không? giải thích
+
+**kết quả không đổi**.
+
+vì rule:
+
+```css
+p#demo.text.highlight
+```
+
+vẫn có độ ưu tiên cao nhất nên dù đổi vị trí trong file css thì phần tử vẫn hiển thị màu gold.
+
+tuy nhiên, nếu hai rule có cùng độ ưu tiên thì rule được viết sau sẽ được ưu tiên hơn.
