@@ -384,11 +384,12 @@ Với content-box, thuộc tính width chỉ áp dụng cho vùng chứa nội d
 Với border-box, thuộc tính width là kích thước cuối cùng của cả hộp. Padding và Border sẽ lấn vào bên trong, giúp việc chia layout chính xác và dễ dàng hơn
 ```
 
-1. trường hợp 1: không dùng border-box
+## 1. trường hợp 1: không dùng border-box
+![alt text](<screenshots/image copy 4.png>)
 
 khi không dùng `border-box`, thuộc tính `width` chỉ tính phần nội dung bên trong. phần `padding` sẽ được cộng thêm vào kích thước thật của cột.
 
-**tính kích thước từng cột:**
+### tính kích thước từng cột
 
 - cột trái:  
 250px + (15px x 2) = 280px
@@ -399,26 +400,31 @@ khi không dùng `border-box`, thuộc tính `width` chỉ tính phần nội du
 - cột phải:  
 250px + (15px x 2) = 280px
 
-**tổng chiều rộng:**
+### tổng chiều rộng
 
 280px + 540px + 280px = **1100px**
 
-**kết quả:**
+### kết quả
 
-vì 1100px lớn hơn 1000px (chiều rộng của container) nên layout sẽ bị vỡ. các cột có thể bị xuống dòng hoặc tràn ra ngoài.
+vì tổng chiều rộng là 1100px, lớn hơn 1000px của container nên các cột không thể nằm vừa trên một hàng.
+
+ở hình thực tế, cột thứ ba (`ads`) đã bị đẩy xuống dòng. điều này cho thấy layout đã bị vỡ do `padding` làm kích thước thật vượt quá chiều rộng container.
 
 ---
 
-2. trường hợp 2: có dùng border-box
+## 2. trường hợp 2: có dùng border-box
+![alt text](<screenshots/image copy 3.png>)
 
-khi dùng `border-box`, trình duyệt sẽ tự tính để `padding` nằm bên trong `width` đã khai báo.
+khi dùng `border-box`, phần `padding` sẽ được tính luôn bên trong `width` đã khai báo.
 
-điều này có nghĩa là kích thước thực tế của cột vẫn giữ nguyên như ban đầu.
+điều này giúp kích thước thật của các cột không bị tăng thêm.
 
-**tổng chiều rộng:**
+### tổng chiều rộng
 
 250px + 500px + 250px = **1000px**
 
-**kết quả:**
+### kết quả
 
-vì tổng chiều rộng đúng bằng 1000px nên layout sẽ vừa khít với container và các cột hiển thị thẳng hàng.
+vì tổng chiều rộng đúng bằng 1000px nên ba cột nằm vừa trong container.
+
+ở hình thực tế, cả ba cột đều hiển thị trên cùng một hàng và không bị xuống dòng, layout hiển thị đúng như mong muốn.
