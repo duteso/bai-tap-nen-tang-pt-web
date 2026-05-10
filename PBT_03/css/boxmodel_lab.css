@@ -14,3 +14,32 @@
     border: 5px solid;
     box-sizing: border-box;
 }
+.main-container {
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    border: 2px dashed red; 
+}
+
+.main-container div {
+    box-sizing: border-box; 
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 15px;
+}
+
+.content {
+    width: 500px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.ads {
+    width: 250px;
+    background-color: #f9f9f9;
+    padding: 15px;
+}

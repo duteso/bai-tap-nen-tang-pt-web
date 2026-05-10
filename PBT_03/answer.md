@@ -383,3 +383,42 @@ Với content-box, thuộc tính width chỉ áp dụng cho vùng chứa nội d
 
 Với border-box, thuộc tính width là kích thước cuối cùng của cả hộp. Padding và Border sẽ lấn vào bên trong, giúp việc chia layout chính xác và dễ dàng hơn
 ```
+
+1. trường hợp 1: không dùng border-box
+
+khi không dùng `border-box`, thuộc tính `width` chỉ tính phần nội dung bên trong. phần `padding` sẽ được cộng thêm vào kích thước thật của cột.
+
+**tính kích thước từng cột:**
+
+- cột trái:  
+250px + (15px x 2) = 280px
+
+- cột giữa:  
+500px + (20px x 2) = 540px
+
+- cột phải:  
+250px + (15px x 2) = 280px
+
+**tổng chiều rộng:**
+
+280px + 540px + 280px = **1100px**
+
+**kết quả:**
+
+vì 1100px lớn hơn 1000px (chiều rộng của container) nên layout sẽ bị vỡ. các cột có thể bị xuống dòng hoặc tràn ra ngoài.
+
+---
+
+2. trường hợp 2: có dùng border-box
+
+khi dùng `border-box`, trình duyệt sẽ tự tính để `padding` nằm bên trong `width` đã khai báo.
+
+điều này có nghĩa là kích thước thực tế của cột vẫn giữ nguyên như ban đầu.
+
+**tổng chiều rộng:**
+
+250px + 500px + 250px = **1000px**
+
+**kết quả:**
+
+vì tổng chiều rộng đúng bằng 1000px nên layout sẽ vừa khít với container và các cột hiển thị thẳng hàng.
