@@ -358,3 +358,28 @@ chỉ khi nhiều css cùng có `!important` thì mới xét tiếp đến độ
 
 ## PHẦN B — THỰC HÀNH CODE (55 điểm)
 ### Bài B1 (20đ) — Style trang Profile
+[text](profile.html)
+
+### Bài B2 (20đ) — Box Model Lab
+#### Phần 1 — Chứng minh content-box vs border-box (10đ):
+- content-box:
+![alt text](<screenshots/image copy.png>)
+```
+Hộp 1 (content-box): chiều rộng thực tế = 350px
+Cách tính: 300width + 20*2(padding) + 5*2(border) = 350px.
+```
+
+- border-box:
+![alt text](<screenshots/image copy 2.png>)
+```
+Hộp 2 (border-box): chiều rộng thực tế = 300px
+Cách tính: Trình duyệt tự co phần content lại còn 250px để tổng cả box vừa đúng 300px.
+```
+
+```
+Giải thích:
+
+Với content-box, thuộc tính width chỉ áp dụng cho vùng chứa nội dung. Padding và Border sẽ cộng thêm vào bên ngoài, làm hộp to hơn dự kiến.
+
+Với border-box, thuộc tính width là kích thước cuối cùng của cả hộp. Padding và Border sẽ lấn vào bên trong, giúp việc chia layout chính xác và dễ dàng hơn
+```
