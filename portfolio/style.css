@@ -1,0 +1,30 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    color: white
+}
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo1{
+    font-size: 50px;
+}
+nav{
+    display: flex;
+    gap: 20%;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pirlo.jpg');
+    background-color: #1a1a1a;
+}
+.info{
+    text-align: left;
+    max-width: 25%;
+    margin: 0 auto;
+    line-height: 1.6; 
+    word-wrap: break-word;
+}
