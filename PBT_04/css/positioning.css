@@ -1,0 +1,56 @@
+header{
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 36363636;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    position: relative;
+}
+.sidebar ul{
+    position: sticky;
+    top: 80px;
+}
+.badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color: red;
+    padding: 5px;
+    border-radius: 100%;
+    color: white;
+}
+.items-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item-card{
+    position: relative;
+    border: 1px solid;
+    width: 200px;
+}
+button{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+}

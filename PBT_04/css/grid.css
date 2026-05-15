@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 15px;
+    padding: 10px;
+}
+
+header, .hero, footer {
+    grid-column: 1 / -1;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999999;
+}
+
+.hero {
+    background-color: darkgray;
+    height: 150px;
+}
+
+.sidebar, .ads {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+
+.ads img {
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+}
