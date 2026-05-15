@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h3>
+                Quản lý thiết bị
+            </h3>
+            <div class="button-container">
+                <button class="btn btn-outline-light">Tiếng Việt</button>
+                <button class="btn btn-outline-light">English</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="body-button">
+            <button class="btn btn-outline-dark" id="add-btn">Thêm thiết bị</button>
+            <input type="text" name="search" class="searchbox" placeholder="Tìm kiếm thiết bị">
+        </div>
+        <div class="devices-grid" id="divicesGrid">
+           <div class="device-card">
+            <h3>Dell OptiPlex 7090</h3>
+            <p><strong>SN:</strong> DL7090001</p>
+            <p>Máy bàn</p>
+            <p class="status">Hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(0)">Sửa</button>
+                <button onclick="deleteDevice(0)">Xóa</button>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>HP LaserJet Pro M404</h3>
+            <p><strong>SN:</strong> HP404001</p>
+            <p>Máy in</p>
+            <p class="status">Hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(1)">Sửa</button>
+                <button onclick="deleteDevice(1)">Xóa</button>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>Lenovo ThinkPad X1</h3>
+            <p><strong>SN:</strong> LN-X1-001</p>
+            <p>Laptop</p>
+            <p class="status">Hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(2)">Sửa</button>
+                <button onclick="deleteDevice(2)">Xóa</button>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>Ubuntu Server 20.04</h3>
+            <p><strong>SN:</strong> UB-SRV-001</p>
+            <p>Máy chủ</p>
+            <p class="status">Hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(3)">Sửa</button>
+                <button onclick="deleteDevice(3)">Xóa</button>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>LG UltraWide 34WN80C</h3>
+            <p><strong>SN:</strong> LG34WN001</p>
+            <p>Màn hình</p>
+            <p class="status">Không hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(4)">Sửa</button>
+                <button onclick="deleteDevice(4)">Xóa</button>
+            </div>
+        </div>
+
+        <div class="device-card">
+            <h3>LG 27GP850</h3>
+            <p><strong>SN:</strong> LG27GP85001</p>
+            <p>Màn hình</p>
+            <p class="status">Hoạt động</p>
+            <div class="device-buttons">
+                <button onclick="editDevice(5)">Sửa</button>
+                <button onclick="deleteDevice(5)">Xóa</button>
+            </div>
+        </div>
+        </div>
+        
+        <div id="form-container" style="display: none; background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px;">
+        <h4>Nhập thông tin thiết bị mới</h4>
+        <form id="deviceForm">
+            <div class="mb-3">
+                <input type="text" id="deviceName" class="form-control" placeholder="Tên thiết bị" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" id="deviceSN" class="form-control" placeholder="Số Serial (SN)" required>
+            </div>
+            <div class="mb-3">
+                <select id="deviceType" class="form-control">
+                    <option value="Máy bàn">Máy bàn</option>
+                    <option value="Laptop">Laptop</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Xác nhận thêm</button>
+            <button type="button" id="cancel-btn" class="btn btn-secondary">Hủy</button>
+        </form>
+    </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+</html>

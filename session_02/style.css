@@ -1,0 +1,33 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    background-color: grey;
+}
+.heading h3{
+    color: white;
+}
+.body-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+#add-btn{
+    margin: 10px;
+}
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+.device-card{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
