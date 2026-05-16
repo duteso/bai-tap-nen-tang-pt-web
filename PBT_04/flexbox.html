@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .hero-content {
+            text-align: center;
+        }
+
+        .layout { 
+            display: flex; 
+        }
+        .sidebar { 
+            width: 250px;
+            flex-shrink: 0;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .content { 
+            flex: 1;
+            padding: 20px;
+        }
+
+        .card-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+        }
+        .card { 
+            width: 30%; 
+            margin: 1.5%;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+        .card img { 
+            width: 100%; 
+        }
+        .card h3 { 
+            font-size: 18px;
+            padding: 10px;
+            flex-grow: 1;
+        }
+        .card .btn { 
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Hero Title</h1>
+            <p>Hero Subtitle</p>
+        </div>
+    </div>
+
+    <div class="layout">
+        
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <p>Content</p>
+        </div>
+
+        <div class="content">
+            
+            <p>Sieu_chuoi_chu_viet_lien_khong_khoang_trong_dai_vo_tan_co_tinh_lam_tran_khung_vi_du_nhu_abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890</p>
+            
+            <div class="card-container">
+                
+                <div class="card">
+                    <img src="https://placehold.co/300x200" alt="Placeholder 1">
+                    <h3>Ngắn</h3>
+                    <button class="btn">Button</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://placehold.co/300x200" alt="Placeholder 2">
+                    <h3>Tiêu đề siêu dài dài dài dài dài dài dài dài dằn dặt bẻ thành nhiều dòng</h3>
+                    <button class="btn">Button</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://placehold.co/300x200" alt="Placeholder 3">
+                    <h3>Tiêu đề vừa phải</h3>
+                    <button class="btn">Button</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

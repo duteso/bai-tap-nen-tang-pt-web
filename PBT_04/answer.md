@@ -49,3 +49,5 @@
 -Dùng Flexbox. Do layout dọc, cần đẩy nút xuống đáy card, dùng display: flex với flex-direction: column,
 cho phần text flex-grow: 1 để chiếm hết không gian, nút tự dính đáy bất kể text dài ngắn.
 ```
+
+### Câu C2 (10đ) — Debug Flexbox
