@@ -51,3 +51,26 @@ cho phần text flex-grow: 1 để chiếm hết không gian, nút tự dính đ
 ```
 
 ### Câu C2 (10đ) — Debug Flexbox
+1. Lỗi 1: Cards không đều chiều cao - nút "Mua" bị nhảy lên/xuống
+![alt text]("screenshots/image copy.png")
+```
+Nguyên nhân:
+Các card có chiều cao tự động theo nội dung (text dài ngắn khác nhau),
+nên nút "Mua" không cùng vị trí. Thiếu cơ chế đẩy nút xuống đáy card.
+```
+2. Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc, nhưng vẫn dính góc trái trên
+![alt text]("screenshots/image.png")
+```
+Nguyên nhân:
+Chỉ dùng display: flex mà không có justify-content (căn giữa ngang) và align-items (căn giữa dọc).
+```
+3. Lỗi 3: Sidebar bị co lại khi content quá dài
+![alt text]("screenshots/image copy 2.png")
+```
+Nguyên nhân:
+Mặc định Flexbox có flex-shrink: 1, tức các item có thể co lại khi không đủ chỗ.
+Sidebar width: 250px vẫn bị co khi content bên cạnh quá rộng.
+```
+4. Sau khi fix:
+![alt text]("screenshots/image copy 3.png")
+![alt text]("screenshots/image copy 4.png")
