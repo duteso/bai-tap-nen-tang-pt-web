@@ -1,79 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
 }
-h1 {
-    color: #333;
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
 }
-.header-action {
-    margin-bottom: 15px;
+
+main {
+    padding: 20px;
 }
-button {
-    padding: 8px 12px;
+
+#thongso {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#thongso p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#addBtn {
     background-color: #007bff;
     color: white;
     border: 1px solid #0056b3;
+    padding: 10px 15px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
-button:hover {
+
+#addBtn:hover {
     background-color: #0056b3;
 }
-.btn-edit { background-color: #ffc107; color: black; border-color: #d39e00; }
-.btn-delete { background-color: #dc3545; border-color: #bd2130; }
 
-table {
+.svTable {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
-    margin-bottom: 20px;
-}
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-th {
-    background-color: #eee;
 }
 
-.stats {
-    background-color: #e9ecef;
-    padding: 10px;
+.svTable th, .svTable td {
     border: 1px solid #ccc;
-    margin-bottom: 20px;
+    text-align: left;
+}
+
+.svTable th {
+    background-color: #ddd;
+}
+
+.btn-sua {
+    background-color: #ffc107;
+    border: 1px solid #d39e00;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-xoa {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #bd2130;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
 }
+
 .modal-content {
     background-color: white;
     width: 400px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid #999;
+    border: 1px solid #666;
 }
+
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
 }
+
 .form-group input {
-    width: 90%;
-    padding: 5px;
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
 }
-.modal-actions {
-    margin-top: 15px;
+
+.form-action {
     text-align: right;
+    margin-top: 20px;
 }
-.btn-cancel {
+
+.form-action button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#cancelBtn {
     background-color: #6c757d;
-    border-color: #5a6268;
+    color: white;
+    border: 1px solid #5a6268;
+    margin-right: 5px;
+}
+
+#saveBtn {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #218838;
 }

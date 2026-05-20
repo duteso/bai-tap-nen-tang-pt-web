@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h3>Quản lý sinh viên</h3>
+        </div>
+    </header>
+    <main>
+        <div id="thongso">
+            <p>
+                Tổng số sinh viên:
+                <span id="soSV">0</span>
+            </p>
+            <p>
+                Điểm trung bình:
+                <span id="diemTB">0.0</span>
+            </p>
+        </div>
+        
+        <button id="addBtn">Thêm sinh viên</button>
+        
+        <table class="svTable" cellpadding="10px">
+            <thead>
+                <tr>
+                    <th>MSV</th>
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Lớp học</th>
+                    <th>Điểm trung bình</th>
+                    <th>Email</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+
+        <div id="formModal" class="modal">
+            <div class="modal-content">
+                <h3 id="formTitle">Thêm sinh viên</h3>
+                <form id="svForm">
+                    <input type="hidden" id="editIndex" value="-1">
+                    
+                    <div class="form-group">
+                        <label>MSV:</label>
+                        <input type="text" id="inputMSV" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Họ và tên:</label>
+                        <input type="text" id="inputTen" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh:</label>
+                        <input type="date" id="inputNgaySinh" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Lớp học:</label>
+                        <input type="text" id="inputLop" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Điểm trung bình:</label>
+                        <input type="number" step="0.1" min="0" max="10" id="inputDiem" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" id="inputEmail" required>
+                    </div>
+
+                    <div class="form-action">
+                        <button type="button" id="cancelBtn">Hủy</button>
+                        <button type="submit" id="saveBtn">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,111 +1,119 @@
-let students = JSON.parse(localStorage.getItem('students')) || [];
+let danhSachSV = JSON.parse(localStorage.getItem('danhSachSV')) || [];
 
-const tableBody = document.getElementById('studentTableBody');
-const modal = document.getElementById('studentModal');
-const studentForm = document.getElementById('studentForm');
-const modalTitle = document.getElementById('modalTitle');
-const editIndexInput = document.getElementById('editIndex');
+const tableBody = document.getElementById('tableBody');
+const soSVElement = document.getElementById('soSV');
+const diemTBElement = document.getElementById('diemTB');
 
-renderStudents();
+const formModal = document.getElementById('formModal');
+const svForm = document.getElementById('svForm');
+const formTitle = document.getElementById('formTitle');
+const addBtn = document.getElementById('addBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const editIndex = document.getElementById('editIndex');
 
-function renderStudents() {
-    tableBody.innerHTML = ''; 
+hienThiDanhSach();
 
-    if (students.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="7" style="text-align:center;">Chưa có dữ liệu sinh viên</td></tr>';
+function hienThiDanhSach() {
+    tableBody.innerHTML = '';
+
+    if (danhSachSV.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="7" style="text-align:center;">Chưa có dữ liệu</td></tr>';
     } else {
-        for (let i = 0; i < students.length; i++) {
-            let sv = students[i];
-            let row = `<tr>
-                <td>${sv.maSV}</td>
-                <td>${sv.hoTen}</td>
-                <td>${sv.ngaySinh}</td>
-                <td>${sv.lopHoc}</td>
-                <td>${sv.diemTB}</td>
-                <td>${sv.email}</td>
-                <td>
-                    <button class="btn-edit" onclick="editStudent(${i})">Sửa</button>
-                    <button class="btn-delete" onclick="deleteStudent(${i})">Xóa</button>
-                </td>
-            </tr>`;
-            tableBody.innerHTML += row;
+        for (let i = 0; i < danhSachSV.length; i++) {
+            let sv = danhSachSV[i];
+            let htmlRow = `
+                <tr>
+                    <td>${sv.msv}</td>
+                    <td>${sv.ten}</td>
+                    <td>${sv.ngaySinh}</td>
+                    <td>${sv.lop}</td>
+                    <td>${sv.diem}</td>
+                    <td>${sv.email}</td>
+                    <td>
+                        <button class="btn-sua" onclick="suaSV(${i})">Sửa</button>
+                        <button class="btn-xoa" onclick="xoaSV(${i})">Xóa</button>
+                    </td>
+                </tr>
+            `;
+            tableBody.innerHTML += htmlRow;
         }
     }
-    updateStatistics();
-}
-
-function updateStatistics() {
-    document.getElementById('totalStudents').innerText = students.length;
     
-    let totalScore = 0;
-    for (let i = 0; i < students.length; i++) {
-        totalScore += parseFloat(students[i].diemTB);
+    capNhatThongSo();
+}
+
+function capNhatThongSo() {
+    soSVElement.innerText = danhSachSV.length;
+
+    let tongDiem = 0;
+    for (let i = 0; i < danhSachSV.length; i++) {
+        tongDiem += parseFloat(danhSachSV[i].diem);
     }
 
-    let avg = students.length > 0 ? (totalScore / students.length).toFixed(2) : 0;
-    document.getElementById('avgScore').innerText = avg;
+    let diemTrungBinh = danhSachSV.length > 0 ? (tongDiem / danhSachSV.length).toFixed(2) : "0.0";
+    diemTBElement.innerText = diemTrungBinh;
 }
 
-function openModal() {
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    modal.style.display = 'none';
-    studentForm.reset(); 
-    editIndexInput.value = -1; 
-    modalTitle.innerText = "Thêm Sinh Viên";
-}
-
-studentForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    let svMoi = {
-        maSV: document.getElementById('maSV').value,
-        hoTen: document.getElementById('hoTen').value,
-        ngaySinh: document.getElementById('ngaySinh').value,
-        lopHoc: document.getElementById('lopHoc').value,
-        diemTB: document.getElementById('diemTB').value,
-        email: document.getElementById('email').value
-    };
-
-    let currentIndex = editIndexInput.value;
-
-    if (currentIndex == -1) {
-        students.push(svMoi);
-    } else {
-        students[currentIndex] = svMoi;
-    }
-
-    saveAndRender();
-    closeModal();
+addBtn.addEventListener('click', function() {
+    formModal.style.display = 'block';
+    formTitle.innerText = "Thêm sinh viên";
+    svForm.reset();
+    editIndex.value = -1;
 });
 
-function editStudent(index) {
-    let sv = students[index];
-    
-    document.getElementById('maSV').value = sv.maSV;
-    document.getElementById('hoTen').value = sv.hoTen;
-    document.getElementById('ngaySinh').value = sv.ngaySinh;
-    document.getElementById('lopHoc').value = sv.lopHoc;
-    document.getElementById('diemTB').value = sv.diemTB;
-    document.getElementById('email').value = sv.email;
+cancelBtn.addEventListener('click', function() {
+    formModal.style.display = 'none';
+});
 
-    modalTitle.innerText = "Cập Nhật Sinh Viên";
-    editIndexInput.value = index;
+svForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    openModal();
+    let svMoi = {
+        msv: document.getElementById('inputMSV').value,
+        ten: document.getElementById('inputTen').value,
+        ngaySinh: document.getElementById('inputNgaySinh').value,
+        lop: document.getElementById('inputLop').value,
+        diem: document.getElementById('inputDiem').value,
+        email: document.getElementById('inputEmail').value
+    };
+
+    let viTriSua = editIndex.value;
+
+    if (viTriSua == -1) {
+        danhSachSV.push(svMoi);
+    } else {
+        danhSachSV[viTriSua] = svMoi;
+    }
+
+    luuVaHienThi();
+    formModal.style.display = 'none';
+});
+
+function suaSV(index) {
+    let sv = danhSachSV[index];
+
+    document.getElementById('inputMSV').value = sv.msv;
+    document.getElementById('inputTen').value = sv.ten;
+    document.getElementById('inputNgaySinh').value = sv.ngaySinh;
+    document.getElementById('inputLop').value = sv.lop;
+    document.getElementById('inputDiem').value = sv.diem;
+    document.getElementById('inputEmail').value = sv.email;
+
+    formTitle.innerText = "Sửa sinh viên";
+    editIndex.value = index;
+
+    formModal.style.display = 'block';
 }
 
-function deleteStudent(index) {
-    let confirmDelete = confirm("Bạn có chắc chắn muốn xóa sinh viên này không?");
-    if (confirmDelete) {
-        students.splice(index, 1); 
-        saveAndRender();
+function xoaSV(index) {
+    let xacNhan = confirm("Bạn có chắc chắn muốn xóa không?");
+    if (xacNhan) {
+        danhSachSV.splice(index, 1);
+        luuVaHienThi();
     }
 }
 
-function saveAndRender() {
-    localStorage.setItem('students', JSON.stringify(students));
-    renderStudents();
+function luuVaHienThi() {
+    localStorage.setItem('danhSachSV', JSON.stringify(danhSachSV));
+    hienThiDanhSach();
 }
