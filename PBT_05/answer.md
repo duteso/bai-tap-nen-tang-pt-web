@@ -122,3 +122,5 @@ $primary-color: #805ad5;
     + VS Code: Extension "Live Sass Compiler" => Click "Watch Sass"  
     + Command line: sass scss/style.scss style.css  
     + Dự án thực tế: Webpack/Vite tự động xử lý (React/Vue đã tích hợp sẵn)
+
+## PHẦN C — PHÂN TÍCH (20 điểm)
