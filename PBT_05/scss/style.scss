@@ -1,0 +1,72 @@
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md;
+    
+    @include respond-to(tablet) {
+        flex-direction: row;
+        padding: 20px;
+    }
+}
+
+.main-content {
+    flex: 1;
+}
+
+.footer {
+    background: $dark-color;
+    color: $white;
+    padding: 20px 0;
+    margin-top: 40px;
+    
+    .container {
+        @include flex-center;
+        flex-direction: column;
+        text-align: center;
+        
+        @include respond-to(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    
+    .footer-links {
+        margin-top: 10px;
+        
+        @include respond-to(tablet) {
+            margin-top: 0;
+        }
+        
+        a {
+            color: $white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    }
+}

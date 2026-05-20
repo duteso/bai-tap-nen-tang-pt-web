@@ -1,0 +1,128 @@
+.header {
+    background: $dark-color;
+    color: $white;
+    padding: $spacing-md 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .nav {
+        display: none;
+        
+        a {
+            color: $white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        
+        @include respond-to(tablet) {
+            display: flex;
+        }
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    
+    @include respond-to(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    @include respond-to(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    padding: $spacing-md;
+    text-align: center;
+    background: $white;
+    @include card-shadow;
+    
+    img {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 12px;
+    }
+    
+    h3 {
+        font-size: 16px;
+        margin-bottom: $spacing-sm;
+        
+        @include respond-to(tablet) {
+            font-size: 18px;
+        }
+    }
+    
+    .price {
+        color: $danger-color;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+}
+
+.btn {
+    @include button-base;
+    background: $primary-color;
+    color: $white;
+    width: 100%;
+    
+    &.btn-secondary {
+        background: $secondary-color;
+    }
+    
+    &.btn-danger {
+        background: $danger-color;
+    }
+}
+
+.sidebar {
+    display: none;
+    
+    @include respond-to(tablet) {
+        display: block;
+        width: 200px;
+        background: $light-bg;
+        padding: 20px;
+        border-radius: $border-radius;
+        margin-right: 20px;
+    }
+    
+    @include respond-to(desktop) {
+        width: 250px;
+    }
+    
+    h3 {
+        margin-bottom: $spacing-md;
+    }
+    
+    .filter-group {
+        margin-bottom: 20px;
+        
+        h4 {
+            margin-bottom: $spacing-sm;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 4px;
+        }
+    }
+}
