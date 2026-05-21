@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">ShopLogo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+            </ul>
+            <form class="d-flex me-3">
+                <input class="form-control me-2" type="search" placeholder="Tìm kiếm">
+                <button class="btn btn-outline-light" type="submit">Tìm</button>
+            </form>
+            <a href="#" class="text-white fs-4"><i class="bi bi-cart3"></i></a>
+        </div>
+    </div>
+</nav>
+
+<div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://placehold.co/1200x400/4A90E2/FFF?text=Slide+1" class="d-block w-100" alt="Slide 1">
+            <div class="carousel-caption">
+                <h2>Giảm giá đến 50%</h2>
+                <p>Mua ngay hôm nay</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.co/1200x400/E94B3C/FFF?text=Slide+2" class="d-block w-100" alt="Slide 2">
+            <div class="carousel-caption">
+                <h2>Sản phẩm mới</h2>
+                <p>Khám phá ngay</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.co/1200x400/27AE60/FFF?text=Slide+3" class="d-block w-100" alt="Slide 3">
+            <div class="carousel-caption">
+                <h2>Miễn phí vận chuyển</h2>
+                <p>Đơn hàng từ 500k</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Sản phẩm nổi bật</h2>
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card position-relative">
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">iPhone 15 Pro Max</h5>
+                    <p class="card-text text-danger fw-bold">29.990.000đ</p>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSP1">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                    <p class="card-text text-danger fw-bold">24.990.000đ</p>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSP2">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card position-relative">
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                    <h5 class="card-title">Xiaomi 14 Pro</h5>
+                    <p class="card-text text-danger fw-bold">19.990.000đ</p>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSP3">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 4">
+                <div class="card-body">
+                    <h5 class="card-title">OPPO Find X7</h5>
+                    <p class="card-text text-danger fw-bold">21.990.000đ</p>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSP4">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 5">
+                <div class="card-body">
+                    <h5 class="card-title">OnePlus 12</h5>
+                    <p class="card-text text-danger fw-bold">18.990.000đ</p>
+                    <button class="btn btn-primary w-100">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 6">
+                <div class="card-body">
+                    <h5 class="card-title">Google Pixel 8</h5>
+                    <p class="card-text text-danger fw-bold">22.990.000đ</p>
+                    <button class="btn btn-primary w-100">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card">
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 7">
+                <div class="card-body">
+                    <h5 class="card-title">Vivo X100 Pro</h5>
+                    <p class="card-text text-danger fw-bold">20.990.000đ</p>
+                    <button class="btn btn-primary w-100">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card position-relative">
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
+                <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 8">
+                <div class="card-body">
+                    <h5 class="card-title">Realme GT 5 Pro</h5>
+                    <p class="card-text text-danger fw-bold">16.990.000đ</p>
+                    <button class="btn btn-primary w-100">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSP1" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">iPhone 15 Pro Max</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/400x400" class="img-fluid mb-3" alt="iPhone 15">
+                <p><strong>Giá:</strong> 29.990.000đ</p>
+                <p><strong>Mô tả:</strong> Điện thoại cao cấp với chip A17 Pro, camera 48MP, màn hình 6.7 inch.</p>
+                <p><strong>Tình trạng:</strong> Còn hàng</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSP2" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Samsung Galaxy S24</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/400x400" class="img-fluid mb-3" alt="Samsung S24">
+                <p><strong>Giá:</strong> 24.990.000đ</p>
+                <p><strong>Mô tả:</strong> Snapdragon 8 Gen 3, camera 50MP, màn hình AMOLED 6.2 inch.</p>
+                <p><strong>Tình trạng:</strong> Còn hàng</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSP3" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xiaomi 14 Pro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/400x400" class="img-fluid mb-3" alt="Xiaomi 14">
+                <p><strong>Giá:</strong> 19.990.000đ</p>
+                <p><strong>Mô tả:</strong> Snapdragon 8 Gen 3, camera Leica, sạc nhanh 120W.</p>
+                <p><strong>Tình trạng:</strong> Còn hàng</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSP4" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">OPPO Find X7</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/400x400" class="img-fluid mb-3" alt="OPPO Find X7">
+                <p><strong>Giá:</strong> 21.990.000đ</p>
+                <p><strong>Mô tả:</strong> Dimensity 9300, camera Hasselblad, màn hình 6.7 inch.</p>
+                <p><strong>Tình trạng:</strong> Còn hàng</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <h5>Về chúng tôi</h5>
+                <p>Shop điện thoại uy tín, chất lượng hàng đầu Việt Nam.</p>
+            </div>
+            <div class="col-12 col-md-3">
+                <h5>Liên kết</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Giới thiệu</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Sản phẩm</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Tin tức</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-3">
+                <h5>Hỗ trợ</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Chính sách bảo hành</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Chính sách đổi trả</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-3">
+                <h5>Liên hệ</h5>
+                <p>Hotline: 1900 1234</p>
+                <p>Email: shop@email.com</p>
+                <p>Địa chỉ: 123 Đường ABC, Hà Nội</p>
+            </div>
+        </div>
+        <hr class="bg-white">
+        <p class="text-center mb-0">&copy; 2024 ShopLogo. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

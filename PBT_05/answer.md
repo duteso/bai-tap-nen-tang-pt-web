@@ -162,4 +162,5 @@ Có. Kích thước font chữ của tiêu đề bài viết trên Mobile nhỏ 
 - 2 ảnh media:
   ![alt text](screenshots/c1_media1.png)
   ![alt text](screenshots/c1_media2.png)
-### 
+
+### Câu C2 (10đ) — Thiết kế Responsive Strategy
