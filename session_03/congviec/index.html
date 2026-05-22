@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <h3>Quản lý công việc</h3>
+    </div>
+    <button id="addBtn">Thêm công việc</button>
+    <div class="container">
+        <table>
+            <thead>
+                <th>STT</th>
+                <th>Tên công việc</th>
+                <th>Mô tả</th>
+                <th>Hạn hoàn thành</th>
+                <th>Mức ưu tiên</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </thead>
+            <tbody id="tableCV">
+                <tr>
+                    <td>1</td>
+                    <td>Làm bài tập</td>
+                    <td>Bài tập môn PTW</td>
+                    <td>1/6/2026</td>
+                    <td>1</td>
+                    <td>Chưa hoàn thành</td>
+                    <td>
+                        <button class="btnSua">Sửa</button>
+                        <button class="btnXoa">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chơi và bời</td>
+                    <td>Lang thang chocopie</td>
+                    <td>2/8/2026</td>
+                    <td>36</td>
+                    <td>Hoàn thành</td>
+                    <td>
+                        <button class="btnSua">Sửa</button>
+                        <button class="btnXoa">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Kiến tiềm</td>
+                    <td>Kiếm 100 tỷ</td>
+                    <td>3/6/2100</td>
+                    <td>1</td>
+                    <td>Chưa hoàn thành</td>
+                    <td>
+                        <button class="btnSua">Sửa</button>
+                        <button class="btnXoa">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ABC</td>
+                    <td>XYZ</td>
+                    <td>1/6/2026</td>
+                    <td>1</td>
+                    <td>Chưa hoàn thành</td>
+                    <td>
+                        <button class="btnSua">Sửa</button>
+                        <button class="btnXoa">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>12314p</td>
+                    <td>21412421</td>
+                    <td>1/6/2026</td>
+                    <td>1</td>
+                    <td>Chưa hoàn thành</td>
+                    <td>
+                        <button class="btnSua">Sửa</button>
+                        <button class="btnXoa">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <dialog id="addModal">
+            <div class="addForm">
+                <button id="closeBtn">X</button>
+                <form action="#">
+                    <label for="tenCV">Tên công việc</label>
+                    <input type="text" name="tenCV" id="tenCV">
+                    <label for="ndCV">Mô tả</label>
+                    <input type="text" name="ndCV" id="ndCV">
+                    <label for="hanCV">Hạn hoàn thành</label>
+                    <input type="date" name="hanCV" id="hanCV">
+                    <label for="mucCV">Mức độ ưu tiên</label>
+                    <input type="number" name="mucCV" id="mucCV">
+                    <label for="trangThai">Trạng thái công việc</label>
+                    <select id="trangThai" name="trangThai">
+                        <option value="Hoàn Thành">Hoàn Thành</option>
+                        <option value="Chưa Hoàn Thành">Chưa Hoàn Thành</option>
+                    </select>
+                    <button id="OK">Thêm</button>
+                </form>
+            </div>
+        </dialog>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
