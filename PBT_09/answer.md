@@ -125,3 +125,4 @@ for (let i = 0; i < 1000; i++) {
 
 document.body.appendChild(fragment);
 ```
+- Giải thích: document.body.appendChild() trong vòng lặp buộc trình duyệt tính toán lại bố cục (Reflow) và vẽ lại giao diện (Repaint) 1000 lần. DocumentFragment là một DOM node ảo tồn tại ẩn trên RAM. Append vào Fragment không ảnh hưởng UI. Cuối cùng, chỉ với thao tác đẩy toàn bộ Fragment vào body, trình duyệt xử lý Reflow và Repaint đúng 1 lần, hiệu suất cải thiện đáng kể.
