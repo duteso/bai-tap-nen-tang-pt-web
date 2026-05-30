@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng Ký</h2>
+        <form id="regForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Họ và tên">
+                <span id="nameStatus" class="status"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email">
+                <div id="emailErr" class="error"></div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="pwd" placeholder="Mật khẩu">
+                <div class="progress-container">
+                    <div id="strengthBar" class="progress-bar"></div>
+                </div>
+                <div id="pwdErr" class="error"></div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="pwdConf" placeholder="Xác nhận mật khẩu">
+                <span id="pwdConfStatus" class="status"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="phone" placeholder="Số điện thoại">
+                <div id="phoneErr" class="error"></div>
+            </div>
+            
+            <button type="submit" id="submitBtn" disabled>Đăng ký</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Đăng ký thành công!</h3>
+            <div id="modalInfo"></div>
+            <button id="closeModal">Đóng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

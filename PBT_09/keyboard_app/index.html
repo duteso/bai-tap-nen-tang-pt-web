@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Navigation App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery & Command Palette</h1>
+        <p>Nhấn <strong>Ctrl + K</strong> để mở Command Palette. Nhấn <strong>Tab</strong> để điều hướng.</p>
+    </header>
+
+    <main>
+        <div id="gallery" class="gallery-grid"></div>
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Zoomed Image">
+            <p id="modalHint">Mũi tên Trái/Phải để chuyển | 1-9 nhảy số | Space (Play/Pause) | Esc đóng</p>
+        </div>
+    </div>
+
+    <div id="cmdPalette" class="palette-overlay" aria-hidden="true">
+        <div class="palette-content">
+            <input type="text" id="cmdInput" placeholder="Tìm kiếm lệnh..." aria-label="Command Input">
+            <ul id="cmdList" role="listbox"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
