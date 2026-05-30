@@ -144,3 +144,109 @@ var html = `
 `;
 ```
 
+## PHẦN C — SUY LUẬN (20 điểm)
+### Câu C1 (10đ) — Debug JavaScript
+Câu C1 (10đ) — Debug JavaScript
+Dưới đây là 6 lỗi trong đoạn code, giải thích nguyên nhân và cách sửa:
+
+1. Lỗi logic so sánh:
+```
+- Code cũ: if (giaSauGiam = 0)
+
+- Giải thích: Sử dụng toán tử gán (=) thay vì toán tử so sánh (===). Điều này khiến giaSauGiam luôn bị gán bằng 0 (Falsy), lệnh trong if không bao giờ chạy và hàm luôn trả về 0.
+
+Cách sửa: Sửa thành if (giaSauGiam === 0)
+```
+
+2. Lỗi với var trong vòng lặp bất đồng bộ:
+```
+- Code cũ: for (var i = 0; i < 5; i++) { setTimeout(...) }
+
+- Giải thích: Biến var có function scope (hoặc global scope), không có block scope. Khi vòng lặp chạy xong rất nhanh, i đã tăng lên 5. Một giây sau, 5 callback của setTimeout mới thực thi và cùng tham chiếu đến biến i lúc này đã là 5. Kết quả in ra "Item 5" 5 lần.
+
+- Cách sửa: Thay var i = 0 bằng let i = 0 (vì let có block scope, mỗi vòng lặp sẽ tạo ra một bản sao i riêng biệt).
+```
+3. Lỗi truyền sai kiểu dữ liệu đầu vào:
+```
+- Code cũ: tinhGiaGiamGia("100000", 20)
+
+- Giải thích: Truyền chuỗi "100000" thay vì số. Dù JavaScript sẽ tự động ép kiểu ngầm định (coercion) khi thực hiện phép trừ/nhân, nhưng đây là thói quen code rất xấu, dễ gây bug nếu sau này có phép cộng (+).
+
+- Cách sửa: Bỏ dấu ngoặc kép, truyền số 100000 hoặc ép kiểu Number("100000").
+```
+
+4. Lỗi thiếu kiểm tra giá bán:
+```
+- Code cũ: Hàm chỉ kiểm tra phanTramGiam mà bỏ quên giaBan.
+
+- Giải thích: Nếu giaBan bị truyền vào là số âm, hoặc NaN, hoặc chuỗi, code vẫn tiếp tục chạy và cho ra kết quả sai lệch.
+
+- Cách sửa: Thêm điều kiện if (typeof giaBan !== "number" || isNaN(giaBan) || giaBan < 0) { return "Giá bán không hợp lệ"; }
+```
+5. Lỗi xử lý kiểu trả về của hàm:
+```
+- Code cũ: console.log("Giá: " + gia2)
+
+Giải thích: Khi phanTramGiam = 110, hàm trả về chuỗi "Phần trăm giảm không hợp lệ". Câu lệnh in ra sẽ nối chuỗi mù quáng thành: "Giá: Phần trăm giảm không hợp lệ", gây vô nghĩa về mặt UI/UX.
+
+Cách sửa: Kiểm tra giá trị trả về trước khi nối chuỗi: if (typeof gia2 === "number") console.log("Giá: " + gia2 + "đ"); else console.log(gia2);
+```
+6. Lỗi sử dụng từ khóa khai báo lỗi thời:
+```
+- Code cũ: var giamGia = ...
+
+- Giải thích: Việc dùng var không còn được khuyến khích trong ES6+ vì dễ gây rò rỉ scope và lỗi hoisting. Biến giamGia này không thay đổi lại giá trị sau khi tính.
+
+- Cách sửa: Thay var giamGia thành const giamGia.
+```
+
+### Câu C2 (10đ) — Bài toán thực tế
+```
+function inHoaDon(danhSachMon, isWednesday = false, tipPercent = 5) {
+    const VAT_RATE = 0.08;
+    let subTotal = 0;
+    
+    console.log("--- HÓA ĐƠN NHÀ HÀNG ---");
+
+    for (let i = 0; i < danhSachMon.length; i++) {
+        const mon = danhSachMon[i];
+        const thanhTien = mon.price * mon.quantity;
+        subTotal += thanhTien;
+        
+        console.log(`${i + 1}. ${mon.name} (x${mon.quantity}): ${thanhTien.toLocaleString('vi-VN')}đ`);
+    }
+
+    let discountPercent = 0;
+    if (subTotal > 1000000) {
+        discountPercent = 15;
+    } else if (subTotal > 500000) {
+        discountPercent = 10;
+    }
+    if (isWednesday) discountPercent += 5;
+
+    const discountAmount = subTotal * (discountPercent / 100);
+    const afterDiscount = subTotal - discountAmount;
+
+    const vatAmount = afterDiscount * VAT_RATE;
+    const tipAmount = afterDiscount * (tipPercent / 100);
+    const finalTotal = afterDiscount + vatAmount + tipAmount;
+
+    const formatVND = (num) => num.toLocaleString('vi-VN') + "đ";
+
+    console.log("------------------------");
+    console.log(`Tổng cộng:      ${formatVND(subTotal)}`);
+    console.log(`Giảm giá (${discountPercent}%):  ${formatVND(discountAmount)}`);
+    console.log(`VAT (8%):       ${formatVND(vatAmount)}`);
+    console.log(`Tip (${tipPercent}%):       ${formatVND(tipAmount)}`);
+    console.log("------------------------");
+    console.log(`THANH TOÁN:     ${formatVND(finalTotal)}`);
+}
+
+const order = [
+    { name: "Phở bò", price: 65000, quantity: 2 },
+    { name: "Trà đá", price: 5000, quantity: 3 },
+    { name: "Bún chả", price: 55000, quantity: 1 }
+];
+
+inHoaDon(order, false, 5);
+```
